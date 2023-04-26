@@ -2,9 +2,9 @@
 Implementation of combinational logic using universal-gates
  
 ## AIM:
-To verify its operation in Quartus using Verilog programming.
- F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
-F2=xy’z+x’y’z+w’xy+wx’y+wxy
+To verify the following expressions in Quartus using Verilog programming.
+a) F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+b) F2=xy’z+x’y’z+w’xy+wx’y+wxy
  
  
  
@@ -23,19 +23,17 @@ The input and output variables are allocated with letter symbols. The exact trut
 ```
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: A.J.PRANAV
-RegisterNumber:  212222230107
+Developed by: R Guruprasad
+RegisterNumber:  212222240033
 */
 ```
 ```
-module Combination(a,b,c,d,f1);
+module combinational(a,b,c,d,f1);
 input a,b,c,d;
 output f1;
 assign f1 = (~b&~d) | (~a&b&d) | (a&b&~c);
 endmodule
-
-
-module Combinatio(w,x,y,z,f2);
+module combinational(w,x,y,z,f2);
 input w,x,y,z;
 output f2;
 assign f2 = (x&y)|(w&y)|(~y&z);
@@ -43,19 +41,13 @@ endmodule
 ```
 ## Output:
 ## RTL
-### CODE1:
-![](./code1.png)
-![](./output1.png)
-
-### CODE2:
-![](./code2.png)
-![](./output2.png)
-
+![](./rtl1.png)
+![](./rtl2.png)
 
 ## Timing Diagram
 
-![](./gate1.png)
-![](./gate2.png)
+![](wave1.png)
+![](./wave2.png)
 
 
 ## Result:
